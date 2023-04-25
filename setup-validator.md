@@ -42,13 +42,13 @@ make install
 celestia-appd keys add <your-account-name> [--keyring-backend os]
 ```
 - init config
-<code>
+```sh
 celestia-appd init <your-moniker-name> --chain-id <blockspacerace-0>
 cd $HOME
 wget https://github.com/celestiaorg/networks/blob/master/blockspacerace/genesis.json
 mv genesis.json $HOME/.celestia-app/config/
-</code>
-<!-- config seeds and peers from https://github.com/celestiaorg/networks/blob/master/blockspacerace/ -->
+```
+config seeds and peers from https://github.com/celestiaorg/networks/blob/master/blockspacerace/
 ```sh
 SEEDS="0293f2cf7184da95bc6ea6ff31c7e97578b9c7ff@65.109.106.95:26656,8f14ec71e1d712c912c27485a169c2519628cfb6@celest-test-seed.theamsolutions.info:22256"
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" ~/./.celestia-app/config/config.toml
@@ -79,49 +79,20 @@ Once setup, you should be ready to start the node as normal. In the logs, you sh
 see: `Discovering snapshots`. This may take a few minutes before snapshots are found
 depending on the network topology.
 
-#### Quick sync
+### sync using snapshot data
 
 Quick sync effectively downloads the entire `data` directory from a third-party provider
 meaning the node has all the application and blockchain state as the node it was
 copied from.
 
-````mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs groupId="network">
-<TabItem value="mocha" label="Mocha">
-
-Run the following command to quick-sync from a snapshot for `mocha`:
 
 ```sh
 cd $HOME
 rm -rf ~/.celestia-app/data
 mkdir -p ~/.celestia-app/data
-SNAP_NAME=$(curl -s https://snaps.qubelabs.io/celestia/ | \
-    egrep -o ">mocha.*tar" | tr -d ">")
-wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
+wget -O - https://snaps.qubelabs.io/celestia/snapshot-name*.tar | tar xf - \
     -C ~/.celestia-app/data/
 ```
-
-</TabItem>
-<TabItem value="blockspacerace" label="Blockspace Race">
-
-Run the following command to quick-sync from a snapshot for `blockspacerace`:
-
-```sh
-cd $HOME
-rm -rf ~/.celestia-app/data
-mkdir -p ~/.celestia-app/data
-SNAP_NAME=$(curl -s https://snaps.qubelabs.io/celestia/ | \
-    egrep -o ">blockspacerace.*tar" | tr -d ">")
-wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME} | tar xf - \
-    -C ~/.celestia-app/data/
-```
-
-</TabItem>
-</Tabs>
-````
 
 ## Start the celestia-app
 Now you can start you validator
