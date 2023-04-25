@@ -55,7 +55,7 @@ sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" ~/./.celestia-app/config/confi
 ```
 
 ## Syncing
-This is optional
+This is optional, 
 There are two alternatives for speed up syncing.
 
 ### Using state sync
@@ -79,7 +79,7 @@ Once setup, you should be ready to start the node as normal. In the logs, you sh
 see: `Discovering snapshots`. This may take a few minutes before snapshots are found
 depending on the network topology.
 
-### sync using snapshot data
+### Using snapshot data
 
 Quick sync effectively downloads the entire `data` directory from a third-party provider
 meaning the node has all the application and blockchain state as the node it was
