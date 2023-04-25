@@ -135,8 +135,10 @@ celestia-appd  tx staking delegate $(celestia-appd keys show <your-monkier-name>
 ```
 
 ### check your validator signed latest block
+```sh
 Status=$(curl localhost:26657/status 2>/dev/null)
 validator_address=$(echo $Status |  jq -r .result.validator_info.address)
 Height=$(echo $Status | jq -r  .result.sync_info.latest_block_height)
 curl localhost:26657/block?height=$Height 2>/dev/null | jq --arg address "$validator_address" '.result.block.last_commit.signatures[] | select(.validator_address == $address)'
+```
 
