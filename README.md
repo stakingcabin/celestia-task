@@ -45,7 +45,7 @@ you can run the app by following:
 
 
 ![Example](https://github.com/stakingcabin/celestia-task/blob/main/screenshots/SignStatus.png?raw=true "EX")
-
+![Example](https://github.com/stakingcabin/celestia-task/blob/main/screenshots/SignStatusWithFailed.png?raw=true "EX")
 
   ```$ python3 consensus.py```
 ![Example](https://github.com/stakingcabin/celestia-task/blob/main/screenshots/consensus.png?raw=true "EX")
