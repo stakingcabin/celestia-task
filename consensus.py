@@ -11,7 +11,7 @@ RED_BLOCK = '🟥'
 ERR_MSG = f"\033[91m[ERR] API endpoint unreachable: api\n" \
           f"[ERR] Be sure you have enabled your API " \
           f"(you can enable this in your app.toml config file)\n" \
-          f"Bugreports Discord: Yep++#9963\033[0m"
+          f"Bugreports Discord: https://github.com/stakingcabin/celestia-task.git\033[0m"
 
 # default ports
 REST = "http://127.0.0.1:1317"
