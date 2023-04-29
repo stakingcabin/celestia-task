@@ -45,7 +45,7 @@ celestia-appd keys add <your-account-name> [--keyring-backend os]
 ```sh
 celestia-appd init <your-moniker-name> --chain-id <blockspacerace-0>
 cd $HOME
-wget https://github.com/celestiaorg/networks/blob/master/blockspacerace/genesis.json
+wget https://raw.githubusercontent.com/celestiaorg/networks/master/blockspacerace/genesis.json
 mv genesis.json $HOME/.celestia-app/config/
 ```
 config seeds and peers from https://github.com/celestiaorg/networks/blob/master/blockspacerace/
