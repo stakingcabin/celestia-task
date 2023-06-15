@@ -1,3 +1,7 @@
+```sh
+wget https://raw.githubusercontent.com/stakingcabin/celestia-task/main/consensus.py
+```
+
 # consensus
 A Simple tool for check validator sign status for recent 100 blocks and the state of the consensus
 
